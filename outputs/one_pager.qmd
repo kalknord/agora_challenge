@@ -1,188 +1,336 @@
 ---
-title: ""
 lang: de
-
 format:
   pdf:
     pdf-engine: xelatex
+    documentclass: scrartcl
     papersize: a4
     page-layout: full
-    fontsize: 9pt
+    fontsize: 8.2pt
     mainfont: "DejaVu Sans"
     toc: false
     number-sections: false
     geometry:
       - landscape
-      - margin=0.7cm
+      - margin=0.58cm
+    include-in-header:
+      text: |
+        \usepackage{graphicx}
+        \usepackage[most]{tcolorbox}
+        \usepackage{xcolor}
+        \usepackage{tabularx}
+        \usepackage{array}
+        \usepackage{ragged2e}
+        \usepackage{microtype}
+        \usepackage{adjustbox}
+        \pagestyle{empty}
+        \pagenumbering{gobble}
 
-header-includes:
-  - |
-    \usepackage{graphicx}
-    \usepackage[most]{tcolorbox}
-    \usepackage{xcolor}
-    \usepackage{tabularx}
-    \usepackage{array}
-    \usepackage{booktabs}
-    \usepackage{ragged2e}
-    \pagestyle{empty}
+        \definecolor{agorablue}{HTML}{174A7C}
+        \definecolor{agoradark}{HTML}{0F2F4F}
+        \definecolor{agoralight}{HTML}{EEF4FA}
+        \definecolor{agoragreen}{HTML}{DCEFE7}
+        \definecolor{agorayellow}{HTML}{FFF3D6}
+        \definecolor{agoragray}{HTML}{666666}
+        \definecolor{boxgray}{HTML}{F5F5F5}
+        \definecolor{linegray}{HTML}{D8E0E8}
 
-    \definecolor{agorablue}{HTML}{174A7C}
-    \definecolor{agoralight}{HTML}{EEF4FA}
-    \definecolor{agoragray}{HTML}{666666}
+        \setlength{\parindent}{0pt}
+        \setlength{\parskip}{0pt}
+        \setlength{\tabcolsep}{0pt}
+        \hyphenpenalty=5000
+        \exhyphenpenalty=5000
+        \emergencystretch=2em
+        \sloppy
 
-    \setlength{\parindent}{0pt}
-    \setlength{\parskip}{0pt}
-
-    \tcbset{
-      boxrule=0pt,
-      arc=1.5mm,
-      left=3mm,
-      right=3mm,
-      top=2mm,
-      bottom=2mm
-    }
-
+        \tcbset{
+          enhanced,
+          boxrule=0pt,
+          arc=1.5mm,
+          left=2.55mm,
+          right=2.55mm,
+          top=1.55mm,
+          bottom=1.55mm,
+          before skip=0pt,
+          after skip=0pt
+        }
 execute:
   echo: false
-  freeze: auto
+  warning: false
+  message: false
 ---
 
-```{=latex}
-\begin{center}
+\begin{adjustbox}{max totalsize={\textwidth}{0.985\textheight},center}
+\begin{minipage}{\textwidth}
+\fontsize{8.2}{9.25}\selectfont
+\RaggedRight
 
-{\LARGE\bfseries Was kann das BMDS steuern?}
+% =========================================================
+% HEADER
+% =========================================================
 
-\vspace{1mm}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{0.66\textwidth}>{\raggedleft\arraybackslash}p{0.34\textwidth}@{}}
+{\fontsize{20.2}{22.2}\selectfont\bfseries\color{agoradark}Was kann das BMDS wirklich steuern?}
+&
+{\footnotesize\bfseries Digitalhaushalt-Challenge}\\[-0.1mm]
 
-{\normalsize Eine datenbasierte Vermessung des Digitalhaushalts 2019--2024}
+{\fontsize{10.2}{11.8}\selectfont Eine datenbasierte Vermessung des Digitalhaushalts 2019--2024}
+&
+{\footnotesize Hammes · Kegel · Köhler}\\[-0.1mm]
 
-\vspace{1mm}
+{}
+&
+{\footnotesize HWR Berlin · Juni 2026}
+\end{tabularx}
 
-{\footnotesize Digitalhaushalt-Challenge · Hammes Kegel Köhler · HWR Berlin · Juni 2026}
+\vspace{1.45mm}
 
-\end{center}
-```
+% =========================================================
+% ROW 1: CALM INTRO STRIP
+% =========================================================
 
-\vspace{1mm}
-
-```{=latex}
 \begin{tcolorbox}[
-colback=agoralight,
-colframe=white
+height=2.82cm,
+colback=white,
+colframe=agorablue,
+boxrule=0.5pt,
+left=2.7mm,
+right=2.7mm,
+top=1.55mm,
+bottom=1.55mm,
+valign=center
 ]
 
-\begin{center}
+\begin{tabularx}{\linewidth}{
+@{}
+>{\raggedright\arraybackslash}p{0.29\linewidth}
+@{\hspace{0.32cm}{\color{linegray}\vrule width 0.35pt}\hspace{0.32cm}}
+>{\raggedright\arraybackslash}p{0.36\linewidth}
+@{\hspace{0.32cm}{\color{linegray}\vrule width 0.35pt}\hspace{0.32cm}}
+>{\raggedright\arraybackslash}p{0.29\linewidth}
+@{}
+}
 
-{\fontsize{34}{36}\selectfont\bfseries\color{agorablue}21--23\,\%}
+{\fontsize{8.6}{9.6}\selectfont
+\textbf{\color{agorablue}Steuerungsreichweite}
 
-\vspace{1mm}
+\vspace{0.35mm}
 
-{\large\bfseries maximale direkte BMDS-Steuerung}
+{\fontsize{23.5}{24.5}\selectfont\bfseries\color{agorablue}21--23\,\%}
 
-\vspace{1mm}
+\vspace{0.35mm}
 
-Selbst im günstigsten Bündelungsszenario könnte ein Bundesministerium für Digitales und Staatsmodernisierung nur rund ein Fünftel des heutigen Digitalhaushalts direkt steuern.
+direkt steuerbar im realistischen Bündelungsszenario.
+}
 
-\end{center}
+&
 
+{\fontsize{8.6}{9.6}\selectfont
+\textbf{\color{agorablue}Leitfrage}
+
+\vspace{0.55mm}
+
+Was kann ein BMDS tatsächlich steuern, wenn digitale Mittel über Infrastruktur, Bildung, Forschung, Verteidigung, Verwaltung und Industriepolitik verteilt sind?
+}
+
+&
+
+{\fontsize{8.6}{9.6}\selectfont
+\textbf{\color{agorablue}Datenbasis}
+
+\vspace{0.55mm}
+
+ZEW/Agora Digitalhaushalt Open Data: \textbf{21.358 Haushaltstitel} in \textbf{2019, 2021, 2023 und 2024}; primär \texttt{digi\_soll\_eng}.
+}
+
+\end{tabularx}
 \end{tcolorbox}
-```
 
-\vspace{2mm}
+\vspace{1.35mm}
 
-```{=latex}
-\begin{center}
-```
+% =========================================================
+% ROW 2: MAIN AREA
+% =========================================================
 
-![](../figures/h1_ressort_profile_2024.png){height=8.2cm}
+\begin{tabularx}{\textwidth}{
+@{}
+>{\raggedright\arraybackslash}p{0.625\textwidth}
+@{\hspace{0.36cm}}
+>{\raggedright\arraybackslash}p{0.355\textwidth}
+@{}
+}
 
-```{=latex}
-\end{center}
-```
+% ---------------- LEFT: FIGURE ----------------
+\begin{tcolorbox}[
+height=9.55cm,
+colback=white,
+colframe=agorablue,
+boxrule=0.55pt,
+valign=top,
+left=2.7mm,
+right=2.7mm,
+top=1.8mm,
+bottom=1.8mm
+]
+{\bfseries\color{agorablue}Empirischer Kernbefund}
 
-\vspace{1mm}
+\vspace{0.4mm}
 
-```{=latex}
-\begin{tabularx}{\textwidth}{@{}XXXX@{}}
+{\fontsize{10.05}{11.3}\selectfont\bfseries Sechs Ressorts, sechs verschiedene Digital-Profile}
 
-\begin{tcolorbox}[colback=agoralight]
-{\Large\bfseries\color{agorablue}92\,\%}
+\vspace{0.7mm}
 
-\vspace{1mm}
+\centering
+\includegraphics[width=\linewidth,height=6.82cm,keepaspectratio]{../figures/h1_ressort_profile_2024.png}
 
-Digital-Soll konzentriert sich auf sechs Ressorts.
+\vspace{0.7mm}
 
-\vspace{1mm}
-
-4,05 Mrd. € wären zentralisierbar.
+{\footnotesize\color{agoragray}
+Digitalmittel finanzieren je nach Ressort unterschiedliche Aufgaben. Eine Bündelung wäre deshalb nicht nur Verwaltungsreform, sondern ein Eingriff in Sachpolitik.
+}
 \end{tcolorbox}
 
 &
 
-\begin{tcolorbox}[colback=agoralight]
-{\Large\bfseries\color{agorablue}31,8\,\%}
+% ---------------- RIGHT: FINDINGS ----------------
+\begin{tcolorbox}[
+height=9.55cm,
+colback=white,
+colframe=agorablue,
+boxrule=0.55pt,
+valign=top,
+left=2.4mm,
+right=2.4mm,
+top=1.8mm,
+bottom=1.8mm
+]
 
-\vspace{1mm}
+{\bfseries\color{agorablue}Drei Befunde aus der Struktur}
 
-Transferanteil 2024.
+\vspace{0.8mm}
 
-\vspace{1mm}
+\begin{tcolorbox}[height=2.25cm,colback=boxgray,colframe=white,valign=center]
+{\bfseries 1 · Polyzentrik statt Digitaltopf}
 
-Eigene Investitionen verlieren an Bedeutung, Transfers gewinnen.
+\vspace{0.35mm}
+
+Sechs Ressorts decken 2024 rund \textbf{92\,\%} des Digital-Solls ab. Das größte Ressort hält nur rund \textbf{23\,\%}.
 \end{tcolorbox}
 
-&
+\vspace{0.85mm}
 
-\begin{tcolorbox}[colback=agoralight]
-{\Large\bfseries\color{agorablue}1,89 Mrd. €}
+\begin{tcolorbox}[height=2.25cm,colback=boxgray,colframe=white,valign=center]
+{\bfseries 2 · Förderung statt Eigenaufbau}
 
-\vspace{1mm}
+\vspace{0.35mm}
 
-Zukunftsstrategie 2024.
-
-\vspace{1mm}
-
-Politische Labels wechseln, die Mittelstruktur bleibt.
+Eigene Bundesinvestitionen stagnieren bei rund \textbf{1 Mrd. Euro}; Zuschüsse an Länder, Kommunen und Private steigen auf \textbf{5,71 Mrd. Euro}.
 \end{tcolorbox}
 
-&
+\vspace{0.85mm}
 
-\begin{tcolorbox}[colback=agoralight]
-{\Large\bfseries\color{agorablue}Rang 1 $\neq$ Rang 1}
+\begin{tcolorbox}[height=2.25cm,colback=boxgray,colframe=white,valign=center]
+{\bfseries 3 · Aufmerksamkeit folgt nicht dem Geld}
 
-\vspace{1mm}
+\vspace{0.35mm}
 
-BMDV besitzt das größte Budget.
+Das BMDV hat 2024 das größte Digitalvolumen; im parlamentarischen Digitaldiskurs ist das BMI sichtbarer.
+\end{tcolorbox}
 
-\vspace{1mm}
-
-BMI dominiert den parlamentarischen Diskurs.
 \end{tcolorbox}
 
 \end{tabularx}
-```
 
-\vspace{2mm}
+\vspace{1.25mm}
 
-```{=latex}
+% =========================================================
+% ROW 3: SEPARATE DIAGNOSIS STRIP
+% =========================================================
+
 \begin{tcolorbox}[
-colback=white,
-colframe=agorablue,
-boxrule=0.6pt
+height=1.12cm,
+colback=agorayellow,
+colframe=white,
+left=2.7mm,
+right=2.7mm,
+top=0.75mm,
+bottom=0.65mm,
+valign=center
 ]
-
-\textbf{\color{agorablue}Politische Implikation}
-
-Ein BMDS kann Transparenz, Klassifikation und Berichtswesen zentralisieren. Operative Steuerung bleibt aufgrund der Ressortstruktur dauerhaft begrenzt.
-
-\end{tcolorbox}
-```
-
-\vfill
-
-```{=latex}
-{\color{agoragray}
-\footnotesize
-Digitalhaushalt Open Data (ZEW/Agora 2025) · 21.358 Haushaltstitel · 2019--2024 \hfill github.com/kalknord/agora\_challenge
+{\fontsize{8.55}{9.45}\selectfont
+\textbf{\color{agoradark}Kurzdiagnose:}
+Zentralisierbar sind vor allem \textbf{Bericht und Klassifikation}; nur begrenzt zentralisierbar ist der \textbf{operative Ausgabentopf}.
 }
-```
+\end{tcolorbox}
+
+\vspace{1.25mm}
+
+% =========================================================
+% ROW 4: CONCLUSION BOXES
+% =========================================================
+
+\begin{tabularx}{\textwidth}{
+@{}
+>{\raggedright\arraybackslash}p{0.69\textwidth}
+@{\hspace{0.36cm}}
+>{\raggedright\arraybackslash}p{0.29\textwidth}
+@{}
+}
+
+\begin{tcolorbox}[height=2.05cm,colback=agoragreen,colframe=white,valign=center]
+{\fontsize{8.25}{9.25}\selectfont
+\textbf{\color{agoradark}Politische Implikation}
+
+\vspace{0.4mm}
+
+Ein BMDS sollte nicht den gesamten Digitalhaushalt operativ zentralisieren wollen. Sinnvoller ist ein Doppelmandat: \textbf{Transparenz und Berichtswesen zentralisieren}; operative Steuerung nur dort bündeln, wo sie sachlich plausibel ist.
+}
+\end{tcolorbox}
+
+&
+
+\begin{tcolorbox}[height=2.05cm,colback=agoralight,colframe=white,valign=center]
+{\fontsize{8.25}{9.25}\selectfont
+\textbf{\color{agorablue}Beitrag zur Challenge}
+
+\vspace{0.4mm}
+
+Der Hebel ist nicht nur mehr Geld, sondern bessere Sichtbarkeit darüber, \textbf{welche Digitalausgaben steuerbar sind}.
+}
+\end{tcolorbox}
+
+\end{tabularx}
+
+\vspace{1.05mm}
+
+% =========================================================
+% FOOTER
+% =========================================================
+
+\begin{tcolorbox}[
+height=1.02cm,
+colback=agoradark,
+colframe=agoradark,
+arc=1mm,
+left=2.2mm,
+right=2.2mm,
+top=0.75mm,
+bottom=0.65mm,
+valign=center
+]
+\color{white}
+{\fontsize{7.55}{8.3}\selectfont
+\textbf{Kernaussage:} Ein Digitalbudget macht den Haushalt steuerbarer — aber nicht automatisch zentral steuerbar.
+}
+
+\vspace{0.18mm}
+
+{\fontsize{7.0}{7.7}\selectfont
+ZEW/Agora Digitalhaushalt · 21.358 Haushaltstitel · 2019--2024
+\hfill
+github.com/kalknord/agora\_challenge
+}
+\end{tcolorbox}
+
+\end{minipage}
+\end{adjustbox}
