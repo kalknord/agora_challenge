@@ -1,0 +1,188 @@
+---
+title: ""
+lang: de
+
+format:
+  pdf:
+    pdf-engine: xelatex
+    papersize: a4
+    page-layout: full
+    fontsize: 9pt
+    mainfont: "DejaVu Sans"
+    toc: false
+    number-sections: false
+    geometry:
+      - landscape
+      - margin=0.7cm
+
+header-includes:
+  - |
+    \usepackage{graphicx}
+    \usepackage[most]{tcolorbox}
+    \usepackage{xcolor}
+    \usepackage{tabularx}
+    \usepackage{array}
+    \usepackage{booktabs}
+    \usepackage{ragged2e}
+    \pagestyle{empty}
+
+    \definecolor{agorablue}{HTML}{174A7C}
+    \definecolor{agoralight}{HTML}{EEF4FA}
+    \definecolor{agoragray}{HTML}{666666}
+
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{0pt}
+
+    \tcbset{
+      boxrule=0pt,
+      arc=1.5mm,
+      left=3mm,
+      right=3mm,
+      top=2mm,
+      bottom=2mm
+    }
+
+execute:
+  echo: false
+  freeze: auto
+---
+
+```{=latex}
+\begin{center}
+
+{\LARGE\bfseries Was kann das BMDS steuern?}
+
+\vspace{1mm}
+
+{\normalsize Eine datenbasierte Vermessung des Digitalhaushalts 2019--2024}
+
+\vspace{1mm}
+
+{\footnotesize Digitalhaushalt-Challenge · Hammes Kegel Köhler · HWR Berlin · Juni 2026}
+
+\end{center}
+```
+
+\vspace{1mm}
+
+```{=latex}
+\begin{tcolorbox}[
+colback=agoralight,
+colframe=white
+]
+
+\begin{center}
+
+{\fontsize{34}{36}\selectfont\bfseries\color{agorablue}21--23\,\%}
+
+\vspace{1mm}
+
+{\large\bfseries maximale direkte BMDS-Steuerung}
+
+\vspace{1mm}
+
+Selbst im günstigsten Bündelungsszenario könnte ein Bundesministerium für Digitales und Staatsmodernisierung nur rund ein Fünftel des heutigen Digitalhaushalts direkt steuern.
+
+\end{center}
+
+\end{tcolorbox}
+```
+
+\vspace{2mm}
+
+```{=latex}
+\begin{center}
+```
+
+![](../figures/h1_ressort_profile_2024.png){height=8.2cm}
+
+```{=latex}
+\end{center}
+```
+
+\vspace{1mm}
+
+```{=latex}
+\begin{tabularx}{\textwidth}{@{}XXXX@{}}
+
+\begin{tcolorbox}[colback=agoralight]
+{\Large\bfseries\color{agorablue}92\,\%}
+
+\vspace{1mm}
+
+Digital-Soll konzentriert sich auf sechs Ressorts.
+
+\vspace{1mm}
+
+4,05 Mrd. € wären zentralisierbar.
+\end{tcolorbox}
+
+&
+
+\begin{tcolorbox}[colback=agoralight]
+{\Large\bfseries\color{agorablue}31,8\,\%}
+
+\vspace{1mm}
+
+Transferanteil 2024.
+
+\vspace{1mm}
+
+Eigene Investitionen verlieren an Bedeutung, Transfers gewinnen.
+\end{tcolorbox}
+
+&
+
+\begin{tcolorbox}[colback=agoralight]
+{\Large\bfseries\color{agorablue}1,89 Mrd. €}
+
+\vspace{1mm}
+
+Zukunftsstrategie 2024.
+
+\vspace{1mm}
+
+Politische Labels wechseln, die Mittelstruktur bleibt.
+\end{tcolorbox}
+
+&
+
+\begin{tcolorbox}[colback=agoralight]
+{\Large\bfseries\color{agorablue}Rang 1 $\neq$ Rang 1}
+
+\vspace{1mm}
+
+BMDV besitzt das größte Budget.
+
+\vspace{1mm}
+
+BMI dominiert den parlamentarischen Diskurs.
+\end{tcolorbox}
+
+\end{tabularx}
+```
+
+\vspace{2mm}
+
+```{=latex}
+\begin{tcolorbox}[
+colback=white,
+colframe=agorablue,
+boxrule=0.6pt
+]
+
+\textbf{\color{agorablue}Politische Implikation}
+
+Ein BMDS kann Transparenz, Klassifikation und Berichtswesen zentralisieren. Operative Steuerung bleibt aufgrund der Ressortstruktur dauerhaft begrenzt.
+
+\end{tcolorbox}
+```
+
+\vfill
+
+```{=latex}
+{\color{agoragray}
+\footnotesize
+Digitalhaushalt Open Data (ZEW/Agora 2025) · 21.358 Haushaltstitel · 2019--2024 \hfill github.com/kalknord/agora\_challenge
+}
+```

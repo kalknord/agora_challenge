@@ -1,0 +1,28 @@
+project:
+  type: default
+  output-dir: outputs
+  render:
+    - outputs/ergebnis.qmd
+    - outputs/one_pager.qmd
+
+format:
+  pdf:
+    pdf-engine: xelatex
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    mainfont: "DejaVu Serif"
+    geometry:
+      - margin=2.5cm
+    fontsize: 11pt
+    colorlinks: true
+  html:
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    theme: cosmo
+    embed-resources: true
+
+execute:
+  freeze: auto
+  echo: false

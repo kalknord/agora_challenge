@@ -1,0 +1,31 @@
+# Python / Umgebung
+.venv
+__pycache__/
+**/__pycache__/
+*.pyc
+**/*.pyc
+
+# Editor / OS / Tooling
+.DS_Store
+**/.DS_Store
+.ipynb_checkpoints/
+**/.ipynb_checkpoints/
+
+# Quarto-Build-Artefakte
+/.quarto/
+**/.quarto/
+**/*.quarto_ipynb
+outputs/ergebnis_files/
+outputs/*.html
+outputs/figures/
+notebooks/*_files/
+
+# Daten (nicht Teil des Repos)
+data/raw/*.xlsx
+data/external/*
+!data/external/.gitkeep
+!data/raw/.gitkeep
+
+# Interne Arbeitsdateien (nicht Teil der öffentlichen Abgabe)
+outputs/einreichung_checkliste.md
+ergebnis_v1_archiv.qmd
